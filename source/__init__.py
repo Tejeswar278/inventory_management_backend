@@ -11,7 +11,7 @@ def create_app():
 
     CORS(app)
 
-    connect(host=os.environ.get('MONGO_URL'), db=os.environ.get('MONGO_DATABASE'), port=int(os.environ.get('MONGO_PORT')), alias='STORE')
+    connect(host=os.environ.get('MONGO_URL'), alias='STORE')
 
     from .routes.route_admin import admin_routes
     app.register_blueprint(admin_routes)
